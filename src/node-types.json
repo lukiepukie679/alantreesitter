@@ -1,6 +1,21 @@
 [
   {
-    "type": "arguments",
+    "type": "additive_operator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "OR",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "assign_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -8,7 +23,69 @@
       "required": true,
       "types": [
         {
+          "type": "ARRAY",
+          "named": true
+        },
+        {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "simple_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "BEGIN",
+          "named": true
+        },
+        {
+          "type": "END",
+          "named": true
+        },
+        {
+          "type": "statements",
+          "named": true
+        },
+        {
+          "type": "variable_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "call_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "CALL",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
           "named": true
         }
       ]
@@ -19,11 +96,50 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "functionCall",
+          "type": "relational_operator",
+          "named": true
+        },
+        {
+          "type": "simple_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "factor",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "FALSE",
+          "named": true
+        },
+        {
+          "type": "NOT",
+          "named": true
+        },
+        {
+          "type": "TRUE",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "factor",
+          "named": true
+        },
+        {
+          "type": "identifier",
           "named": true
         },
         {
@@ -31,18 +147,14 @@
           "named": true
         },
         {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "variable",
+          "type": "simple_expression",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "functionCall",
+    "type": "function",
     "named": true,
     "fields": {},
     "children": {
@@ -50,26 +162,197 @@
       "required": true,
       "types": [
         {
-          "type": "arguments",
+          "type": "FUNCTION",
           "named": true
         },
         {
-          "type": "variable",
+          "type": "TO",
+          "named": true
+        },
+        {
+          "type": "body",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "type",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "program",
+    "type": "if_statement",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ELSE",
+          "named": true
+        },
+        {
+          "type": "ELSIF",
+          "named": true
+        },
+        {
+          "type": "END",
+          "named": true
+        },
+        {
+          "type": "IF",
+          "named": true
+        },
+        {
+          "type": "THEN",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "statements",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "input_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "GET",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "simple_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "leave_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "LEAVE",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "multiplicative_operator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "statement",
+          "type": "AND",
+          "named": true
+        },
+        {
+          "type": "REMAINDER",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "output_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "PUT",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "relational_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "simple_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "additive_operator",
+          "named": true
+        },
+        {
+          "type": "term",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "SOURCE",
+          "named": true
+        },
+        {
+          "type": "body",
+          "named": true
+        },
+        {
+          "type": "function",
+          "named": true
+        },
+        {
+          "type": "identifier",
           "named": true
         }
       ]
@@ -84,18 +367,38 @@
       "required": true,
       "types": [
         {
-          "type": "functionCall",
+          "type": "assign_statement",
           "named": true
         },
         {
-          "type": "variableDeclaration",
+          "type": "call_statement",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "input_statement",
+          "named": true
+        },
+        {
+          "type": "leave_statement",
+          "named": true
+        },
+        {
+          "type": "output_statement",
+          "named": true
+        },
+        {
+          "type": "while_statement",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "variableDeclaration",
+    "type": "statements",
     "named": true,
     "fields": {},
     "children": {
@@ -103,15 +406,116 @@
       "required": true,
       "types": [
         {
-          "type": "expression",
+          "type": "RELAX",
           "named": true
         },
         {
-          "type": "variable",
+          "type": "statement",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "term",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "factor",
+          "named": true
+        },
+        {
+          "type": "multiplicative_operator",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ARRAY",
+          "named": true
+        },
+        {
+          "type": "BOOLEAN",
+          "named": true
+        },
+        {
+          "type": "INTEGER",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "variable_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "while_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "DO",
+          "named": true
+        },
+        {
+          "type": "END",
+          "named": true
+        },
+        {
+          "type": "WHILE",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "statements",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\"",
+    "named": false
   },
   {
     "type": "(",
@@ -122,7 +526,31 @@
     "named": false
   },
   {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
     "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ":=",
     "named": false
   },
   {
@@ -130,23 +558,147 @@
     "named": false
   },
   {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "<>",
+    "named": false
+  },
+  {
     "type": "=",
     "named": false
   },
   {
-    "type": "let",
+    "type": ">",
     "named": false
   },
   {
+    "type": ">=",
+    "named": false
+  },
+  {
+    "type": "AND",
+    "named": true
+  },
+  {
+    "type": "ARRAY",
+    "named": true
+  },
+  {
+    "type": "BEGIN",
+    "named": true
+  },
+  {
+    "type": "BOOLEAN",
+    "named": true
+  },
+  {
+    "type": "CALL",
+    "named": true
+  },
+  {
+    "type": "DO",
+    "named": true
+  },
+  {
+    "type": "ELSE",
+    "named": true
+  },
+  {
+    "type": "ELSIF",
+    "named": true
+  },
+  {
+    "type": "END",
+    "named": true
+  },
+  {
+    "type": "FALSE",
+    "named": true
+  },
+  {
+    "type": "FUNCTION",
+    "named": true
+  },
+  {
+    "type": "GET",
+    "named": true
+  },
+  {
+    "type": "IF",
+    "named": true
+  },
+  {
+    "type": "INTEGER",
+    "named": true
+  },
+  {
+    "type": "LEAVE",
+    "named": true
+  },
+  {
+    "type": "NOT",
+    "named": true
+  },
+  {
+    "type": "OR",
+    "named": true
+  },
+  {
+    "type": "PUT",
+    "named": true
+  },
+  {
+    "type": "RELAX",
+    "named": true
+  },
+  {
+    "type": "REMAINDER",
+    "named": true
+  },
+  {
+    "type": "SOURCE",
+    "named": true
+  },
+  {
+    "type": "THEN",
+    "named": true
+  },
+  {
+    "type": "TO",
+    "named": true
+  },
+  {
+    "type": "TRUE",
+    "named": true
+  },
+  {
+    "type": "WHILE",
+    "named": true
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
     "type": "number",
-    "named": true
-  },
-  {
-    "type": "string",
-    "named": true
-  },
-  {
-    "type": "variable",
     "named": true
   }
 ]
