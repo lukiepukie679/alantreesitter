@@ -1,29 +1,65 @@
-;; Highlights for Alan language
+;; Keywords
+(SOURCE) @keyword
+(FUNCTION) @keyword
+(BEGIN) @keyword
+(END) @keyword
+(IF) @keyword
+(THEN) @keyword
+(ELSE) @keyword
+(ELSIF) @keyword
+(WHILE) @keyword
+(DO) @keyword
+(GET) @keyword
+(PUT) @keyword
+(LEAVE) @keyword
+(RELAX) @keyword
+(CALL) @keyword
+(BOOLEAN) @keyword
+(INTEGER) @keyword
+(ARRAY) @keyword
+(TO) @keyword
+(REMAINDER) @keyword
+(AND) @keyword
+(OR) @keyword
+(NOT) @keyword
+(TRUE) @keyword
+(FALSE) @keyword
 
-((source) :foreground "#0000ff") ;; Top-level source code in blue
+;; Constants
+(number) @constant
+(string) @string
 
-((function) :foreground "#800080") ;; Functions in purple
+;; Comments
+(comment) @comment
 
-((body) :foreground "#000000") ;; Function bodies in black
+;; Identifiers
+(identifier) @variable
 
-((type) :foreground "#008000") ;; Types in green
+;; Functions
+(function name: (identifier) @function)
+(call_statement (identifier) @function)
 
-((variable_definition) :foreground "#000000") ;; Variable definitions in black
+;; Types
+(type (BOOLEAN) @type)
+(type (INTEGER) @type)
+(type (ARRAY) @type)
 
-((statements) :foreground "#000000") ;; Statements in black
+;; Statements
+(assign_statement) @statement
+(if_statement) @conditional
+(while_statement) @repeat
+(call_statement) @function.call
+(input_statement) @statement
+(output_statement) @statement
+(leave_statement) @statement
 
-((statement) :foreground "#000000") ;; Individual statements in black
+;; Expressions
+(expression) @expression
+(simple_expression) @expression
+(term) @expression
+(factor) @expression
 
-((expression) :foreground "#ff0000") ;; Expressions in red
-
-((comment) :foreground "#808080") ;; Comments in gray
-
-((TRUE) :foreground "#008000") ;; TRUE keyword in green
-
-((FALSE) :foreground "#008000") ;; FALSE keyword in green
-
-((identifier) :foreground "#000000") ;; Identifiers in black
-
-((number) :foreground "#0000ff") ;; Numbers in blue
-
-((string) :foreground "#800000") ;; Strings in maroon
+;; Operators
+(relational_operator) @operator
+(additive_operator) @operator
+(multiplicative_operator) @operator

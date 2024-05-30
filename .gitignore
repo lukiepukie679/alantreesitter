@@ -38,4 +38,3 @@ dist/
 *.o
 
 /test_suite
-/test.alan
